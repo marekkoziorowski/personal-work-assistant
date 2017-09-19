@@ -1,3 +1,60 @@
 html {
-    color: blue;
+    height: 100%;
+    box-sizing: border-box; /* https://css-tricks.com/box-sizing/ */
 }
+
+*, *:before, *:after {
+  box-sizing: inherit; /* https://css-tricks.com/box-sizing/ */
+}
+
+body {
+    color: #EEE;
+    background-color: #666;
+    padding: 0;
+    margin: 0;
+    min-height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+
+.flexcontainer{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+}
+
+// .main-side-panel{
+//     width: 300px;
+//     height: 100%;
+//     border: dotted 1px red;
+// }
+
+// .main-header{
+//     height: 64px;
+//     border: dotted 1px red;
+// }
+
+// .main-container{
+//     width: 100%;
+//     height: 100%;
+//     border: dotted 1px red;
+// }
+
+
+
+
+
+
+
+
+
+// .flex > * {
+//     -webkit-flex:1 1 0;
+// }
+
+// .flex > header {
+//     -webkit-flex:2 0 0;
+//     background:rgba(200,200,200,1);
+// }

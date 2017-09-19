@@ -1,18 +1,22 @@
-import {app, BrowserWindow} from 'electron';
+import {app, BrowserWindow, screen} from 'electron';
 import * as path from 'path';
 import * as url from 'url';
 import * as electronConnect from 'electron-connect';
+import { WindowManager } from './window-manager';
 
 app.on('ready', () => {
 
     var mainWindow = new BrowserWindow({
-        width: 400,
-        height: 300
+        width: 800,
+        height: 600,
+        center: true
     });
-        
+    
     mainWindow.loadURL(path.join(__dirname, '/../../../', 'index-desktop.html'));
-    mainWindow.webContents.openDevTools();
-
-    // Connect to server process 
+    
+    var windowManager = new WindowManager(mainWindow);
+    windowManager.undockMaximized();
+    
     electronConnect.client.create(mainWindow);
 });
+
